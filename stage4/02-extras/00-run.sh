@@ -26,9 +26,9 @@ install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share"
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share/applications"
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share/desktop-directories"
 
-git clone https://github.com/FriskByBergen/RPiParticle.git ${ROOTFS_DIR}/usr/local/
-chmod +x ${ROOTFS_DIR}/usr/local/frisby.py
-chmod +x ${ROOTFS_DIR}/usr/local/bin/fby_client
-chmod +x ${ROOTFS_DIR}/usr/local/bin/initrpi
+git clone https://github.com/FriskByBergen/RPiParticle.git ${ROOTFS_DIR}/usr/local/friskby
+chmod +x ${ROOTFS_DIR}/usr/local/friskby/friskby.py
+chmod +x ${ROOTFS_DIR}/usr/local/friskby/bin/fby_client
+chmod +x ${ROOTFS_DIR}/usr/local/friskby/bin/initrpi
 
 pip install -r ${ROOTFS_DIR}/usr/local/friskby/requirements.txt --target=${ROOTFS_DIR}/usr/local/lib/python2.7/dist-packages/
