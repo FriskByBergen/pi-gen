@@ -29,7 +29,7 @@ install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share/desktop-direct
 pip install --ignore-installed --prefix=${ROOTFS_DIR}/usr/local rpiparticle
 
 # We do not want anything in site-packages as it is not in our path.
-mv ${ROOTFS_DIR}/usr/local/lib/python2.7/site-packages/*  ${ROOTFS_DIR}/usr/local/lib/python2.7/dist-packages/
+mv ${ROOTFS_DIR}/usr/local/lib/python2.7/site-packages/* ${ROOTFS_DIR}/usr/local/lib/python2.7/dist-packages/
 
 # Manually enable all friskby services
 ln -sf /usr/local/lib/systemd/system/friskby.service ${ROOTFS_DIR}/etc/systemd/system/getty.target.wants/friskby.service
