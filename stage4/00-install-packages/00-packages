@@ -5,7 +5,7 @@ python-serial python3-serial
 python-picamera python3-picamera
 debian-reference-en x2x
 raspberrypi-net-mods raspberrypi-ui-mods
-python-pip python3-pip
+python3-pip
 python3-numpy
 pypy
 python3-pifacecommon python3-pifacedigitalio python3-pifacedigital-scratch-handler python-pifacecommon python-pifacedigitalio
