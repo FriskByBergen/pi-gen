@@ -2,7 +2,6 @@
 
 ln -sf pip3 ${ROOTFS_DIR}/usr/bin/pip-3.2
 
-
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/Documents"
 
 #Alacarte fixes
@@ -11,8 +10,11 @@ install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share"
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share/applications"
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/pi/.local/share/desktop-directories"
 
-pip install --ignore-installed --prefix=${ROOTFS_DIR}/usr/local rpiparticle
+# Remove the dirt old jessie pip, replace it with our own.
+pip install --ignore-installed --prefix=${ROOTFS_DIR}/usr pip
+mv ${ROOTFS_DIR}/usr/lib/python2.7/site-packages/* ${ROOTFS_DIR}/usr/lib/python2.7/dist-packages/
 
+pip install --ignore-installed --prefix=${ROOTFS_DIR}/usr/local rpiparticle
 # We do not want anything in site-packages as it is not in our path.
 mv ${ROOTFS_DIR}/usr/local/lib/python2.7/site-packages/*  ${ROOTFS_DIR}/usr/local/lib/python2.7/dist-packages/
 
